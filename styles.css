@@ -1,0 +1,63 @@
+/* styles.css — simple modern hello page */
+:root{
+  --bg1: #0f172a; /* dark navy */
+  --bg2: #071126; /* deeper */
+  --card: rgba(255,255,255,0.06);
+  --glass: rgba(255,255,255,0.06);
+  --accent: #7c3aed; /* purple */
+  --muted: rgba(255,255,255,0.75);
+  --glass-border: rgba(255,255,255,0.08);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.12), transparent),
+              radial-gradient(1000px 500px at 90% 90%, rgba(14,165,233,0.06), transparent),
+              linear-gradient(180deg,var(--bg1),var(--bg2));
+  color: white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px;
+}
+
+.hero{width:100%;max-width:980px;padding:20px}
+.card{
+  backdrop-filter: blur(8px) saturate(120%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border:1px solid var(--glass-border);
+  border-radius:16px;
+  padding:36px;
+  text-align:center;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+}
+.avatar{
+  width:88px;height:88px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,0.06);margin-bottom:18px;
+}
+h1{font-size:clamp(26px,6vw,48px);margin:0 0 8px;font-weight:700;letter-spacing:-0.01em}
+#type{color:var(--accent);display:inline-block}
+.tag{color:var(--muted);margin:0 0 20px;font-size:16px}
+.controls{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+button, .cta{
+  appearance:none;border:0;padding:10px 16px;border-radius:10px;background:rgba(255,255,255,0.03);color:inherit;cursor:pointer;font-weight:600;transition:all .18s ease; text-decoration:none;
+}
+button:hover, .cta:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(2,6,23,0.4)}
+.cta{background:linear-gradient(90deg,var(--accent),#06b6d4);color:white}
+.footer{margin-top:18px;color:rgba(255,255,255,0.45);font-size:14px}
+
+/* small responsive tweaks */
+@media (max-width:560px){
+  .card{padding:24px;border-radius:12px}
+  .avatar{width:72px;height:72px}
+}
+
+/* theme: light */
+:root.light{
+  --bg1:#f6f7fb;--bg2:#eef2ff;--card:rgba(255,255,255,0.85);--muted:rgba(10,20,30,0.6);--glass-border:rgba(10,20,30,0.06);--accent:#6d28d9;color: #071126
+}
+:root.light body{color:var(--color)}
